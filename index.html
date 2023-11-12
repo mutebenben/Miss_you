@@ -74,10 +74,29 @@ canvas {
 	 		setInterval(drap,50);
 	 		</script>
 
+  <audio preload autoplay loop id="music">
+    <!-- <source src="../倒 - 迟里乌布.mp3" type="audio/mpeg"> -->
+    <source src="http://music.163.com/song/media/outer/url?id=2091609453.mp3" type="audio/mpeg">
+  </audio>  	 
+	 
     <div id="child"><h4> <br> To 糖糖：<br> &emsp;&emsp; 晓看天色暮看云 <br> &emsp;&emsp; 行也思君 坐也思君 <br>
         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp; From Denzel</h4></div><!--这里写名字❤💗！！！-->
     <canvas id="pinkboard"></canvas>
     <script>
+
+    // 让html自动播放背景音乐
+    window.onload = function(){
+        setInterval("toggleSound()",1);
+    }
+
+    function toggleSound() {
+        var music = document.getElementById("music");//获取ID  
+        if (music.paused) { //判读是否播放  
+            music.paused=false;
+            music.play(); //没有就播放 
+        }    
+    }
+	    
   /*
  * Settings
  */
